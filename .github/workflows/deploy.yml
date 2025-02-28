@@ -23,11 +23,21 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      - name: Package Lambda function
+        run: |
+          zip -r lambda_function.zip lambda_function.py
+
+      - name: Upload Lambda function to AWS
+        run: |
+          aws lambda update-function-code \
+            --function-name StopIdleEC2Instances \
+            --zip-file fileb://lambda_function.zip
+
       - name: Initialize Terraform
         run: terraform init
 
-      - name: Validate Terraform
+      - name: Validate Terraform configuration
         run: terraform validate
 
-      - name: Apply Terraform
+      - name: Apply Terraform changes
         run: terraform apply --auto-approve
