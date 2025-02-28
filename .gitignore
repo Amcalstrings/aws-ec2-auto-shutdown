@@ -1,18 +1,18 @@
-# Terraform state files (should not be versioned)
+# Terraform state files
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 terraform/.terraform/
 terraform/.terraform.lock.hcl
 
-# AWS credentials & environment variables (if any)
+# AWS credentials & environment variables 
 .aws/
 .env
 
-# Lambda deployment package (should be built automatically)
+# Lambda deployment package 
 lambda/lambda_function.zip
 
-# Python cache & virtual environment (if any)
+# Python cache & virtual environment 
 __pycache__/
 venv/
 .terraform/
-.terraform/
+
