@@ -14,3 +14,5 @@ lambda/lambda_function.zip
 # Python cache & virtual environment (if any)
 __pycache__/
 venv/
+.terraform/
+.terraform/
