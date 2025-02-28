@@ -1,25 +1,20 @@
-# AWS EC2 Auto Shutdown with Lambda & CloudWatch
+# **AWS EC2 Auto Shutdown with Terraform & GitHub Actions 🚀**
 
-## 🚀 Overview
-This AWS Lambda function automatically stops low-utilized EC2 instances using CloudWatch metrics.
+## **📌 Overview**
+This project automates the shutdown of **underutilized EC2 instances** based on **CPU usage**. The automation is implemented using **AWS Lambda, CloudWatch, SNS, and API Gateway**, all provisioned via **Terraform**.
 
-## 🔧 How It Works
-1. A **CloudWatch EventBridge Rule** triggers the Lambda function periodically.
-2. The function checks **EC2 instances' CPU utilization**.
-3. If an instance has **low CPU usage**, it is automatically **stopped**.
+Additionally, a **CI/CD pipeline using GitHub Actions** ensures that updates to the Lambda function are automatically deployed.
 
-## 🛠 Technologies Used
-- **AWS Lambda** (Python)
-- **Amazon CloudWatch**
-- **Amazon EC2**
-- **Amazon SNS** (optional for notifications)
+---
 
-## 📂 Setup Instructions
-1. Deploy the Lambda function using the provided Python script.
-2. Set up **IAM roles** with the required permissions.
-3. Configure **EventBridge** to trigger the function periodically.
+## **🛠 Features**
+✅ **AWS Lambda** - Monitors CPU usage & stops idle instances  
+✅ **CloudWatch EventBridge** - Triggers Lambda every 10 minutes  
+✅ **SNS Notifications** - Alerts when an instance is stopped  
+✅ **API Gateway** - Provides a manual HTTP trigger to stop instances  
+✅ **Terraform Infrastructure as Code** - Manages AWS resources  
+✅ **GitHub Actions CI/CD** - Automates Lambda function updates  
 
-## 📜 Code
-```python
-# Example snippet
-ec2_client.stop_instances(InstanceIds=instances_to_stop)
+---
+
+## **📂 Project Structure**
