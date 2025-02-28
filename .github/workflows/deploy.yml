@@ -25,7 +25,7 @@ jobs:
 
       - name: Package Lambda function
         run: |
-          zip -r lambda_function.zip lambda_function.py
+          run: zip -r lambda_function.zip lambda/lambda_function.py
 
       - name: Upload Lambda function to AWS
         run: |
