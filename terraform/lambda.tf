@@ -62,9 +62,9 @@ resource "aws_lambda_function" "stop_idle_ec2" {
   role          = aws_iam_role.lambda_role.arn
   runtime       = "python3.8"
   handler       = "lambda_function.lambda_handler"
-  filename      = "../lambda/lambda_function.zip"
+  filename      = "lambda_function.zip"
 
-  source_code_hash = filebase64sha256("../lambda/lambda_function.zip")
+  source_code_hash = filebase64sha256("lambda_function.zip")
 
   environment {
     variables = {
