@@ -23,8 +23,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Change to Terraform directory
-        run: cd terraform    
+      - name: Zip the Lambda function
+        run: |
+          cd lambda
+          zip -r lambda_function.zip lambda_function.py
+
+      - name: Move the Zip File to the Terraform Directory
+        run: mv lambda/lambda_function.zip terraform/lambda_function.zip   
 
       - name: Initialize Terraform
         run: terraform init -upgrade
